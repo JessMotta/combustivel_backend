@@ -5,7 +5,6 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Validação global
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
@@ -14,18 +13,10 @@ async function bootstrap() {
     }),
   );
 
-  // CORS
   app.enableCors({
-    origin: [
-      'http://localhost:3000',
-      'http://localhost:3001',
-      'https://teladeregistrodecombustvel.vercel.app/',
-    ],
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-    credentials: true,
+    origin: '*',
   });
 
-  // Porta dinâmica
   const port = process.env.PORT || 3000;
   await app.listen(port);
 }
