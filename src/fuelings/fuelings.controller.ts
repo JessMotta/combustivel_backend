@@ -37,7 +37,7 @@ export class FuelingsController {
   // =====================================================
 
   /**
-   * 📊 Gastos e volume por combustível
+   * Gastos e volume por combustível
    * Dropdown: combustível
    */
   @Get('metrics/by-fuel')
@@ -55,7 +55,7 @@ export class FuelingsController {
   }
 
   /**
-   * 👤 Gastos por condutor
+   * Gastos por condutor
    * Dropdown: condutor
    */
   @Get('metrics/by-driver')
@@ -73,7 +73,7 @@ export class FuelingsController {
   }
 
   /**
-   * 🚗 Gastos por veículo (placa)
+   * Gastos por veículo (placa)
    * Dropdown: veículo
    */
   @Get('metrics/by-vehicle')
@@ -91,7 +91,7 @@ export class FuelingsController {
   }
 
   /**
-   * 📌 Resumo geral (cards no bottom do dashboard)
+   * Resumo geral (cards no bottom do dashboard)
    * - total de abastecimentos
    * - gasto total
    * - volume total

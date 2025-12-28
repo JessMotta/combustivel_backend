@@ -5,7 +5,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Validação global (perfeito, mantivemos)
+  // Validação global
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
@@ -14,7 +14,7 @@ async function bootstrap() {
     }),
   );
 
-  // CORS (necessário para Vercel)
+  // CORS
   app.enableCors({
     origin: [
       'http://localhost:3000',
@@ -25,7 +25,7 @@ async function bootstrap() {
     credentials: true,
   });
 
-  // Porta dinâmica (OBRIGATÓRIO)
+  // Porta dinâmica
   const port = process.env.PORT || 3000;
   await app.listen(port);
 }
